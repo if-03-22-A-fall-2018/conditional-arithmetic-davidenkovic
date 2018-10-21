@@ -1,3 +1,15 @@
+/*----------------------------------------------------------
+ *				HTBLA-Leonding / Class: <2AHIF>
+ * ---------------------------------------------------------
+ * Exercise Number: 3
+ * Title:			<arithmetic>
+ * Author:			<Ignjatovic David>
+ * ----------------------------------------------------------
+ * Description:
+ * <two functions. one add and one mult. The user can choose
+ * one numebr from 1-100.
+ * ----------------------------------------------------------
+ */
 #include <stdio.h>
 
 int setOperator();
@@ -35,23 +47,37 @@ int getNumber(){
 }
 void Add(int* number){
   int sum = 0;
+  int temp = 0;
   for (int i = 3; i <= *number; i++) {
     if ((i % 3 == 0 )||(i % 5 == 0)) {
       sum = sum + i;
     }
   }
-  printf("The result is: %d",sum );
-  printf("\n");
+  if(*number < 0){
+        temp=-1;
+        printf("Overflow!\n");
+      }
+  if (temp != -1) {
+    printf("The result is: %d",sum );
+    printf("\n");
+  }
 }
 void Mult(int* number){
     long mult = 1;
+    int temp = 0;
     if (*number >= 3) {
       for (int i = 3; i <= *number; i++) {
         if ((i % 3 == 0 )||(i % 5 == 0)) {
           mult = mult * i;
         }
+      }
     }
-    }
-    printf("The result is: %ld",mult );
-    printf("\n");
+    if(*number < 0){
+        temp=-1;
+        printf("Overflow!\n");
+      }
+      if (temp != -1) {
+        printf("The result is: %ld",mult );
+        printf("\n");
+      }
 }
